@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NSFW</title>
+        <style type="text/css">
+        body{
+            margin: 0;
+        }
+        button{
+            background: #E53286;
+            background-image: -webkit-linear-gradient(top, #E53286, #E91414);
+            background-image: -moz-linear-gradient(top, #E53286, #E91414);
+            background-image: -ms-linear-gradient(top, #E53286, #E91414);
+            background-image: -o-linear-gradient(top, #E53286, #E91414);
+            background-image: -webkit-gradient(to bottom, #E53286, #E91414);
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            color: #fff;
+            font-family: Trebuchet MS;
+            font-size: 40px;
+            font-weight: 100;
+            padding: 40px;
+            -webkit-box-shadow: 1px 1px 20px 0 #000000;
+            -moz-box-shadow: 1px 1px 20px 0 #000000;
+            box-shadow: 1px 1px 20px 0 #000000;
+            text-shadow: 1px 1px 20px #000000;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 25%;
+            outline: none;
+        }
+
+        button:hover {
+            border: solid #337FED 1px;
+            background: #9DA727;
+            background-image: -webkit-linear-gradient(top, #9DA727, #3B9D4F);
+            background-image: -moz-linear-gradient(top, #9DA727, #3B9D4F);
+            background-image: -ms-linear-gradient(top, #9DA727, #3B9D4F);
+            background-image: -o-linear-gradient(top, #9DA727, #3B9D4F);
+            background-image: -webkit-gradient(to bottom, #9DA727, #3B9D4F);
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        #botao{
+            width:20%;
+            margin: 15% 40% 0;
+        }
+
+        #luc{
+            opacity: 0.7;
+            border-radius: 100%;
+        }
+
+        </style>
+
+    </head>
+    <body>
+        <div id="botao"><button type="button" onclick="abrir()">NÃO ABRA</button></div>
+        <div id="audio">
+            <audio controls id="som">
+                <source src="Conga.mp3"type="audio/mp3">
+            </audio>
+        </div>
+        <div id="imagem"><img id="luc" src="conga.jpg" width="200px"/></div>
+
+        <script type="text/javascript">
+            document.getElementById('audio').style.visibility = 'hidden';
+
+            function trocaCor(){
+                let x = Math.ceil(Math.random() * 5);
+                switch (x){
+                    case 1: document.body.style.backgroundColor = '#E3D2F4';
+                    break;
+                    case 2: document.body.style.backgroundColor = '#AFDEFA';
+                    break;
+                    case 3: document.body.style.backgroundColor = '#FFD1D0';
+                    break;
+                    case 4: document.body.style.backgroundColor = '#FBF5C5';
+                    break;
+                    case 5: document.body.style.backgroundColor = '#BDF6E3';
+                    break;
+                }
+                let lar = Math.ceil(Math.random() * (window.innerWidth - 500));
+                let alt = Math.ceil(Math.random() * (window.innerHeight - 600));
+                document.getElementById('luc').style.marginLeft = lar + "px";
+                document.getElementById('luc').style.marginTop = alt + "px";
+            abrir();
+            }
+            function abrir(){
+                document.getElementById('botao').style.visibility = 'hidden';
+                document.getElementById('botao').style.margin = '0px';
+                document.getElementById('som').play();
+                setInterval(trocaCor, 1000);
+            }
+        </script>
+    </body>
+</html>
