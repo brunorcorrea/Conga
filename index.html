@@ -53,6 +53,7 @@
         }
 
         #luc{
+            visibility: hidden;
             opacity: 0.7;
             border-radius: 100%;
         }
@@ -97,6 +98,7 @@
             function abrir(){
                 document.getElementById('botao').style.visibility = 'hidden';
                 document.getElementById('imagem').style.visibility = 'visible';
+                document.getElementById('luc').style.visibility = 'visible';
                 document.getElementById('botao').style.margin = '0px';
                 document.getElementById('som').play();
                 setInterval(trocaCor, 1000);
